@@ -16,11 +16,10 @@ def test_negative():
     result=es_par(3,9)
     assert result==False, 'Los numeros no son positivos'
     
-# def test_primer_numero_par():
-#     a=2
-#     b=4
-#     if a%2==0:
-#         es_par(a,b)
-#         assert result
-#     elif b%2==0:
-#         es_par(a,b)    
+def test_primer_numero_par():
+    a=2
+    b=4
+    if a%2==0:
+        es_par(a,b)
+        assert result
+     
