@@ -30,11 +30,11 @@ password:WebElement= driver.find_element(By.ID,'input-password')
 assert password.is_displayed(), 'No se encontro campo de password'
 password.send_keys('123456789')
 
-button_login :WebElement=driver.find_element(By.XPATH,'/html/body/div[2]/div/div/div/div[2]/div/form/input') #cambiar xpath
+button_login :WebElement=driver.find_element(By.XPATH,'//*[@value="Login"]') #cambiar xpath
 assert button_login.is_displayed(), 'No encontro boton'
 button_login.click()
 
-warning:WebElement=driver.find_element(By.XPATH,'/html/body/div[2]/div[1]')#cambiar xpath
+warning:WebElement=driver.find_element(By.XPATH,'//*[contains(@class,"fa-exclamation-circle")]')#cambiar xpath
 assert warning.is_displayed(),'No mostro warning'
 #Warning: No match for E-Mail Address and/or Password.
 
