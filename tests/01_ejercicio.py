@@ -1,4 +1,3 @@
-import time
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
@@ -10,8 +9,10 @@ gecko_driver_path='./drivers/geckodriver'
 url='https://laboratorio.qaminds.com/'
 service =Service(gecko_driver_path)
 driver = webdriver.Firefox(service=service)
+
+driver.implicitly_wait(10)
+
 driver.get(url)
-time.sleep(3)
 
 input_search : WebElement =driver.find_element(By.NAME,'search')
 assert input_search.is_displayed(), 'No se encontro'
