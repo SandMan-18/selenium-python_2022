@@ -1,13 +1,13 @@
-from lib2to3.pgen2 import driver
 import time
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
+
 
 chrome_driver_path='./drivers/chromedriver'
 gecko_driver_path='./drivers/geckodriver'
 
 url='https://www.qamindslab.com'
-service =Service(chrome_driver_path)
+service=Service(chrome_driver_path)
 
 driver = webdriver.Chrome(service=service)
 driver.get(url)

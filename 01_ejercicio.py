@@ -5,7 +5,7 @@ from selenium.webdriver.remote.webelement import WebElement
 from lib.factory.factory_driver import get_driver
 
 
-driver= get_driver("Firefox")
+driver=get_driver("Firefox")
 
 driver.implicitly_wait(10)
 
