@@ -2,12 +2,12 @@ from selenium.webdriver.remote.webdriver import WebDriver
 from selenium.webdriver.common.by import By
 from lib.factory.factory_driver import get_driver
 
+
 driver: WebDriver = None
 
 def setup():
     global driver
-    driver = get_driver("chrome")
-    driver.implicitly_wait(15)
+    driver = get_driver()
     
 def test_search_iphone():
     driver.get("https://laboratorio.qaminds.com/")
