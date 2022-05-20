@@ -45,7 +45,7 @@ class TestDownload:
         text_dollar="$242.00"
         cantidad_dollar=float(text_dollar[1:])
         print(cantidad_dollar)
-        dollar:WebElement=self.wait.until(EC.text_to_be_present_in_element(price_dollar,text_dollar))
+        dollar:WebElement=self.wait.until(EC.visibility_of_any_elements_located(price_dollar))
         
         currency_euro=(By.NAME,'EUR')
         currency_eur:WebElement=self.wait.until(EC.visibility_of_element_located(currency_euro))
@@ -54,7 +54,7 @@ class TestDownload:
         price_eur=(By.XPATH,'//*[@class="list-unstyled"]//li//h2')
         text_eur="189.87€"
         cantidad_eur=float(text_eur[:-1])
-        price_eur:WebElement=self.wait.until(EC.text_to_be_present_in_element(price_eur,text_eur))
+        price_eur:WebElement=self.wait.until(EC.visibility_of_any_elements_located(price_eur))
         assert cantidad_eur<cantidad_dollar
 
     def teardown_method(self):
