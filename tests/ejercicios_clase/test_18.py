@@ -4,7 +4,7 @@ from lib.config import config
 from lib.pom.qaminds.product_page import ProductPage
 
 
-class TestLoginPage:
+class TestProductPage:
     
     def setup_method(self):
         self.driver: WebDriver = get_driver()
@@ -15,9 +15,9 @@ class TestLoginPage:
         assert self.product_page.get_name()=='Samsung SyncMaster 941BW'
         assert self.product_page.get_price()== '$242.00'
         assert self.product_page.get_ex_tax()== '$200.00'
-        self.product_page.get_product_code()== 'Product 6'
-        self.product_page.get_availability()== 'In Stock'
-        self.product_page.get_description()==description
+        assert self.product_page.get_product_code()== 'Product 6'
+        assert self.product_page.get_availability()== 'In Stock'
+        assert self.product_page.get_description()==description
         
     def test_add_to_cart(self):
         self.product_page.add_to_cart()
