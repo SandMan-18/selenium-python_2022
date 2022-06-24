@@ -1,14 +1,14 @@
 from selenium.webdriver.remote.webdriver import WebDriver
 from lib.factory.factory_driver import get_driver
 from lib.config import config
-from lib.pom.examen_final.test_page import TestPage
+from lib.pom.examen_final.test_login.test_pom_login import TestPomLogin
 
 class TestLoginPage:
     
     def setup_method(self):
         self.driver: WebDriver = get_driver()
         self.driver.get(config.get_url())
-        self.login_page=TestPage(self.driver)
+        self.login_page=TestPomLogin(self.driver)
     
     def test_login_box(self):
         self.login_page.get_login()
@@ -23,7 +23,6 @@ class TestLoginPage:
         self.login_page.get_login()
         for menu in ['Login','Register','Forgotten Password']:
             self.login_page.select_menu(menu)
-        
         
     def teardown_method(self):
         if self.driver:

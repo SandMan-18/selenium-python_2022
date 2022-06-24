@@ -1,14 +1,14 @@
 from selenium.webdriver.remote.webdriver import WebDriver
 from lib.factory.factory_driver import get_driver
 from lib.config import config
-from lib.pom.examen_final.test_page import TestPage
+from lib.pom.examen_final.test_checkout.test_pom_checkout import TestPomRChecktout
 
 class TestCheckoutPage:
     
     def setup_method(self):
         self.driver: WebDriver = get_driver()
         self.driver.get(config.get_url())
-        self.checkout_page=TestPage(self.driver)
+        self.checkout_page=TestPomRChecktout(self.driver)
         
     def test_login_checkout(self):
         self.checkout_page.get_checkout_home()

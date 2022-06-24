@@ -1,14 +1,14 @@
 from selenium.webdriver.remote.webdriver import WebDriver
 from lib.factory.factory_driver import get_driver
 from lib.config import config
-from lib.pom.examen_final.test_page import TestPage
+from lib.pom.examen_final.test_product.test_pom_product import TestPomProduct
 
 class TestProductPage:
     
     def setup_method(self):
         self.driver: WebDriver = get_driver()
         self.driver.get(config.get_url())
-        self.test_page=TestPage(self.driver)
+        self.test_page=TestPomProduct(self.driver)
     
     def test_info_samsung(self):
         self.search_element()
